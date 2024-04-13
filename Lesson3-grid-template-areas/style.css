@@ -1,0 +1,38 @@
+body {
+  color: white;
+}
+.container {
+  display: grid;
+  gap: 10px;
+
+  grid-template-columns: repeat(4, 1fr);
+/* подключаем именование 
+. - точка добавляет пустой участок
+*/
+  grid-template-areas:
+   "header header header header" 
+   "aside . article article" 
+   "footer footer footer footer";
+}
+.container > * {
+  padding: 10px;
+  border-radius: 10px;
+}
+
+header {
+  background-color: darkgreen;
+  /* некий-ключ grid-area: header; */
+  grid-area: header;
+}
+article {
+  background-color: black;
+  grid-area: article;
+}
+aside {
+  background-color: brown;
+  grid-area: aside;
+}
+footer {
+  background-color: blue;
+  grid-area: footer;
+}

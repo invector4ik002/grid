@@ -1,0 +1,79 @@
+body {
+  color: white;
+}
+.container {
+  display: grid;
+  gap: 10px;
+  width: 800px;
+  height: 1000px;
+  border: 1px solid black;
+  grid-template: 300px 300px / 100px 350px 100px;
+  /* grid-template-columns: repeat(4, 100px);
+  grid-template-rows: repeat(4, 100px); */
+  /* grid-template-rows: 200px 200px 200px 200px; */
+  /* подключаем именование 
+. - точка добавляет пустой участок
+*/
+  /* grid-template-areas:
+   "header header header header" 
+   "aside article article article" 
+   "footer footer footer footer"; */
+
+  /* end-Сжимает содержимое блоков в право по контенту */
+  /* justify-items: center; start | end | center | stretch */
+  /* start-сжимает  содержимое блоков вверх по контенту */
+  /*align-items: end; start | end | center | stretch;*/
+
+  /* комбенирует в себе
+  align-items: center;
+  justify-items: center;
+  через пробел
+ */
+  /* place-items: end start; */
+
+  /*justify-content:
+  расставляет (дочерние блоки) по горизонтали используя все пространство
+   */
+  /*justify-content: space-between;  start|end|center|stratch|space-around|space-between|space-eveny */
+  /* align-content:
+  расставляет (дочерние блоки) по вертикали используя все пространство
+   */
+  /*align-content: space-between;  start|end|center|stratch|space-around|space-between|space-eveny */
+  /* place-content: комбенирует в себе
+    *align-content:
+    *justify-content:
+    space-between-первое значение это align-content:
+    второе значение это justify-content:
+ */
+  place-content:space-between space-between;
+}
+.container > * {
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid black;
+}
+
+header {
+  background-color: darkgreen;
+  /*grid-area:- (дочерний)некий-ключ для (родительский)*/
+  /* grid-area: header; */
+
+  /*align-self:- (дочерний)некий-ключ для индивидуального расположения по вертикали эл-та из контекста св-ва justify-content: или align-content:
+  также имеет вариант
+  */
+  /* align-self: start; */
+  /* justify-self: end; */
+  /* padding-left: end start; */
+}
+article {
+  background-color: black;
+  /* grid-area: article; */
+}
+aside {
+  background-color: brown;
+  /* grid-area: aside; */
+}
+footer {
+  background-color: blue;
+  /* grid-area: footer; */
+}
